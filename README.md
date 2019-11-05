@@ -13,7 +13,7 @@ npm install buffer-to-arraybuffer
 ```javascript
 var bufferToArrayBuffer = require('buffer-to-arraybuffer');
 
-var b = new Buffer(12);
+var b = Buffer.alloc(12);
 b.write('abc', 0);
 
 var ab = bufferToArrayBuffer(b);
@@ -23,7 +23,7 @@ String.fromCharCode.apply(null, new Uint8Array(ab)); // 'abc'
 NOTE: If you only target node `v4.3+`, you can simply just do:
 
 ```javascript
-new Buffer([12]).buffer
+Buffer.from([12]).buffer
 ```
 
 # License
